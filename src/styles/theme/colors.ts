@@ -1,8 +1,4 @@
-type Colors = {
-  [key: string]: string;
-};
-
-export const colors: Colors = {
+export const colors = {
   white: "#FFFFFF",
   darkBlue: "#293241",
   orange: "#EE6C4D",
