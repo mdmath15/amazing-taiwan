@@ -1,13 +1,4 @@
-type Fonts = {
-  size: {
-    [key: string]: string;
-  };
-  weight: {
-    [key: string]: number;
-  };
-};
-
-export const fonts: Fonts = {
+export const fonts = {
   size: {
     regular: "1rem", // 16px
     md: "1.25rem", // 20px
