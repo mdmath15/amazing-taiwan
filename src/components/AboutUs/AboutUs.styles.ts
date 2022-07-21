@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const Container = styled.div`
   ${({ theme }) => css`
     padding: 0 0 4rem 0;
-    background: url("/wave-bottom.svg") no-repeat top;
+    background: url("/images/wave-bottom.svg") no-repeat top;
     background-size: contain;
     position: relative;
     top: -4px;
@@ -20,7 +20,7 @@ export const Container = styled.div`
       max-width: 1280px;
       margin: 0 auto;
       padding: 6rem 2rem 4rem;
-      background: url("/images/about-us.svg") no-repeat right;
+      background: url("/images/about-us-image.svg") no-repeat right;
 
       display: flex;
       flex-direction: column;
