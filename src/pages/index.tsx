@@ -1,4 +1,5 @@
 import { Header, Hero } from "@/components";
+import { Destinations } from "@/components/Destinations";
 import { SEO } from "@/SEO";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <SEO title="Amazing Taiwan" shouldExcludeTitleSuffix />
       <Header />
       <Hero />
+      <Destinations />
     </>
   );
 }
