@@ -20,7 +20,7 @@ export function Destinations() {
           />
         ))}
       </Carousel>
-      <Button type="button" color="white" background="orange">
+      <Button type="button" color="white" background="orange" withGlow>
         Show More
       </Button>
     </S.Container>

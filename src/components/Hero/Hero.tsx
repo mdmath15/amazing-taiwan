@@ -13,7 +13,7 @@ export function Hero() {
           <br /> 100.000 people to enjoy their best
           <br /> <strong>Taiwan Experience</strong>
         </p>
-        <Button type="button" background="orange" color="white">
+        <Button type="button" background="orange" color="white" withGlow>
           Let&apos;s Explore
         </Button>
       </section>

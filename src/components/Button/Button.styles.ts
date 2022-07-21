@@ -6,6 +6,7 @@ import { theme } from "@styles/theme";
 interface ContainerProps {
   background: "orange" | "blue";
   color: "blue" | "white";
+  withGlow?: boolean;
 }
 
 const buttonColors = {
@@ -15,7 +16,7 @@ const buttonColors = {
 };
 
 export const Container = styled.button<ContainerProps>`
-  ${({ theme, background, color }) => css`
+  ${({ theme, background, color, withGlow }) => css`
     background: ${buttonColors[background]};
     width: max-content;
     height: 42px;
@@ -25,7 +26,7 @@ export const Container = styled.button<ContainerProps>`
     color: ${buttonColors[color]};
     font-weight: ${theme.fonts.weight.bold};
     transition: 200ms;
-
+    ${withGlow && "box-shadow: 0 5px 15px rgba(255, 87, 0, 0.4);"}
     &:hover {
       filter: brightness(0.9);
     }
