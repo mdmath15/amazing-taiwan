@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Button } from "../Button";
 import * as S from "./Header.styles";
 
 export function Header() {
@@ -51,7 +52,13 @@ export function Header() {
               </Link>
             </li>
           </ul>
-          <button type="button">Sign In</button>
+          <Button
+            type="button"
+            background={headerSticky ? "blue" : "orange"}
+            color="white"
+          >
+            Sign In
+          </Button>
         </S.NavContainer>
       </div>
     </S.Container>
