@@ -15,8 +15,4 @@ export const Container = styled.section`
     padding: 2rem 0 1rem;
     transition: shadow 0.3s ease-in-out;
   }
-
-  button {
-    box-shadow: 0 5px 15px rgba(255, 87, 0, 0.4);
-  }
 `;
