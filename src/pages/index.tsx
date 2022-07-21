@@ -1,4 +1,4 @@
-import { Header, Hero, Destinations, AboutUs } from "@/components";
+import { Header, Hero, Destinations, AboutUs, Reviews } from "@/components";
 import { SEO } from "@/SEO";
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
       <Hero />
       <Destinations />
       <AboutUs />
+      <Reviews />
     </>
   );
 }
