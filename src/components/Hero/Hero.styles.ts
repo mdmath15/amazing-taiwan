@@ -32,10 +32,6 @@ export const Container = styled.div`
       strong {
         font-weight: ${theme.fonts.weight.bold};
       }
-
-      button {
-        box-shadow: 0 5px 15px rgba(255, 87, 0, 0.4);
-      }
     }
   `}
 `;
