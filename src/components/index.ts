@@ -6,3 +6,4 @@ export * from "./Destinations";
 export * from "./AboutUs";
 export * from "./Carousel";
 export * from "./ReviewCard";
+export * from "./Reviews";

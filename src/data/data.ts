@@ -85,7 +85,7 @@ export const data = {
       rating: 4,
     },
   ],
-  testimonials: [
+  reviews: [
     {
       id: 1,
       destination: "Taipei 101",
