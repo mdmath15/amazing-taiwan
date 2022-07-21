@@ -15,12 +15,13 @@
     "husky-pass": "lint-staged && test"
   },
   "dependencies": {
+    "@storybook/react": "^6.4.22",
     "next": "^12.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-simple-star-rating": "^4.0.5",
     "sass": "^1.52.3",
-    "styled-components": "^5.3.5",
-    "@storybook/react": "^6.4.22"
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
