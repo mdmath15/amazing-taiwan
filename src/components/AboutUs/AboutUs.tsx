@@ -1,6 +1,6 @@
 import * as S from "./AboutUs.styles";
 
-export function About() {
+export function AboutUs() {
   return (
     <S.Container>
       <h1>About Us</h1>
