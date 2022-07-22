@@ -4,7 +4,6 @@ export const Container = styled.footer`
   ${({ theme }) => css`
     background: ${theme.colors.darkBlue};
     color: ${theme.colors.white};
-    margin-top: -100px;
   `}
 `;
 
