@@ -11,7 +11,7 @@ export function Footer() {
       <S.Wrapper>
         <S.SocialContainer>
           <Image
-            src="/Logo-footer.svg"
+            src="/images/logo-footer.svg"
             alt="Amazing Taiwan"
             width={160}
             height={60}
