@@ -8,3 +8,4 @@ export * from "./Carousel";
 export * from "./ReviewCard";
 export * from "./Reviews";
 export * from "./Newsletter";
+export * from "./Footer";
