@@ -9,3 +9,4 @@ export * from "./ReviewCard";
 export * from "./Reviews";
 export * from "./Newsletter";
 export * from "./Footer";
+export * from "./Wave";
