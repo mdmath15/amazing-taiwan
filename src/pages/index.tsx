@@ -5,6 +5,7 @@ import {
   AboutUs,
   Reviews,
   Newsletter,
+  Footer,
 } from "@/components";
 import { SEO } from "@/SEO";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutUs />
       <Reviews />
       <Newsletter />
+      <Footer />
     </>
   );
 }
