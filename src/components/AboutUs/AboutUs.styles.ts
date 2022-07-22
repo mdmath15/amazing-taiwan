@@ -3,14 +3,10 @@ import styled, { css } from "styled-components";
 export const Container = styled.div`
   ${({ theme }) => css`
     padding: 0 0 4rem 0;
-    background: url("/images/wave-bottom.svg") no-repeat top;
-    background-size: contain;
-    position: relative;
-    top: -4px;
 
     h1 {
       color: ${theme.colors.darkBlue};
-      padding: 16rem 0 0 0;
+      padding: 4rem 0 0 0rem;
       font-size: 2.25rem;
       text-align: center;
     }

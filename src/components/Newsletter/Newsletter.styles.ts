@@ -3,14 +3,14 @@ import styled, { css } from "styled-components";
 export const Container = styled.div`
   ${({ theme }) => css`
     width: 100%;
-    padding: 0 2rem 14rem;
-    background: url("/images/wave-footer.svg") no-repeat bottom;
-    background-size: contain;
+    padding: 0 2rem 0rem;
+    /* background: url("/images/wave-footer.svg") no-repeat bottom;
+    background-size: contain; */
 
     section {
       max-width: 1248px;
       margin: 0 auto;
-      margin-bottom: 10rem;
+      margin-bottom: 4rem;
       height: 400px;
       padding: 0 4rem;
       background: ${theme.colors.darkBlue};

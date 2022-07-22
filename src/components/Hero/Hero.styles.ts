@@ -2,9 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   ${({ theme }) => css`
-    padding: 0 0 8rem 0;
-    background: url("/images/wave-top.svg") no-repeat bottom;
-    background-size: contain;
+    padding: 0 0 2rem 0;
 
     section {
       max-width: 1280px;
