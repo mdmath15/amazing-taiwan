@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <>
       <S.Container>
-        <section>
+        <S.Content>
           <h1>
             Discover your next <br /> place to travel <br /> in Taiwan
           </h1>
@@ -18,7 +18,13 @@ export function Hero() {
           <Button type="button" background="orange" color="white" withGlow>
             Let&apos;s Explore
           </Button>
-        </section>
+        </S.Content>
+        <S.ImageWrapper>
+          <span
+            role="img"
+            aria-label="Two people taking a photo of destination in Taiwan"
+          />
+        </S.ImageWrapper>
       </S.Container>
       <Wave wave="/images/wave-top.svg" width="1440" height="131" />
     </>
