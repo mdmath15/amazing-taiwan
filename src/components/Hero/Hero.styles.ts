@@ -29,7 +29,7 @@ export const Content = styled.div`
     gap: 1rem;
 
     h1 {
-      color: ${theme.colors.darkBlue};
+      color: ${theme.colors.orange};
       font-size: 3.125rem;
       margin-top: 2rem;
 

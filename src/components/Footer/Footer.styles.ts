@@ -24,7 +24,10 @@ export const Wrapper = styled.div`
       grid-template-columns: 1fr 0.5fr;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 400px) {
+      gap: 0;
+      row-gap: 1rem;
+      padding: 0 1rem;
     }
 
     hr {
