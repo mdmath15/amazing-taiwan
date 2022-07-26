@@ -11,28 +11,16 @@ import { CaretLeft, CaretRight, Circle } from "phosphor-react";
 import * as S from "./Carousel.styles";
 
 interface StateCaroselParams {
-  widthCarousel?: number;
-  widthChildrens?: number;
-  qntChildrens?: number;
-  qntBalls?: number[];
-  maxWidthCarousel?: number;
+  qntBalls?: number[] | undefined;
+  width?: number | undefined;
 }
 
 interface CarouselParams {
   children: React.ReactNode;
-  maxWidth?: number;
-  height?: number;
-  gap?: number;
   cardsToShow: number;
 }
 
-export function Carousel({
-  children,
-  maxWidth,
-  height,
-  gap,
-  cardsToShow,
-}: CarouselParams) {
+export function Carousel({ children, cardsToShow }: CarouselParams) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [stateCarousel, setStateCarousel] = useState<StateCaroselParams>();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,12 +33,9 @@ export function Carousel({
 
       setStateCarousel({
         ...stateCarousel,
-        widthCarousel: carousel.offsetWidth,
         qntBalls: new Array(balls).fill(0),
-        widthChildrens: carousel.children.item(0)?.clientWidth,
-        maxWidthCarousel:
-          (carousel.children.length - 1) *
-          carousel.children.item(0)?.clientWidth!,
+        width:
+          carousel.children[0].clientWidth * (carousel.children.length - 1),
       });
     }
   }, [setStateCarousel, cardsToShow]);
@@ -64,14 +49,14 @@ export function Carousel({
           setCurrentIndex(currentIndex + 1);
         }
         return (carouselRef.current!.scrollLeft +=
-          carouselRef.current!.offsetWidth + gap!);
+          carouselRef.current!.offsetWidth);
 
       case "prev":
         if (currentIndex > 0) {
           setCurrentIndex(currentIndex - 1);
         }
         return (carouselRef.current!.scrollLeft -=
-          carouselRef.current!.offsetWidth + gap!);
+          carouselRef.current!.offsetWidth);
 
       default:
         return null;
@@ -83,8 +68,8 @@ export function Carousel({
   }, [handleCarousel]);
 
   return (
-    <S.ContainerRelative max={maxWidth || stateCarousel?.maxWidthCarousel}>
-      <S.Container ref={carouselRef} height={height} gap={gap}>
+    <S.ContainerRelative>
+      <S.Container ref={carouselRef} width={stateCarousel?.width}>
         {children}
         <div className="buttons">
           <button
