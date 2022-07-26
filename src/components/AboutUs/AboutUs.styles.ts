@@ -16,6 +16,7 @@ export const Container = styled.section`
   }
 
   @media (max-width: 860px) {
+    justify-items: center;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 180px;
   }

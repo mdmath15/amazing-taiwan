@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
@@ -9,6 +11,7 @@ import * as S from "./Header.styles";
 
 export function Header() {
   const [headerSticky, setHeaderSticky] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY >= 92) {
@@ -23,7 +26,7 @@ export function Header() {
   }, []);
 
   return (
-    <S.Container headerSticky={headerSticky}>
+    <S.Container headerSticky={headerSticky} active={menuOpen}>
       <div>
         <Image
           src={
@@ -34,8 +37,13 @@ export function Header() {
           height={56}
           style={{ cursor: "pointer" }}
         />
-        <S.NavContainer headerSticky={headerSticky}>
-          <ul>
+        <S.NavContainer headerSticky={headerSticky} active={menuOpen}>
+          <S.Menu onClick={() => setMenuOpen(!menuOpen)}>Menu</S.Menu>
+
+          <ul
+            role="menu"
+            onClick={() => (menuOpen ? setMenuOpen(false) : setMenuOpen(false))}
+          >
             <li>
               <Link href="/">
                 <a>Home</a>
@@ -51,14 +59,16 @@ export function Header() {
                 <a>About</a>
               </Link>
             </li>
+            <li>
+              <Button
+                type="button"
+                background={headerSticky || menuOpen ? "blue" : "orange"}
+                color="white"
+              >
+                Sign In
+              </Button>
+            </li>
           </ul>
-          <Button
-            type="button"
-            background={headerSticky ? "blue" : "orange"}
-            color="white"
-          >
-            Sign In
-          </Button>
         </S.NavContainer>
       </div>
     </S.Container>

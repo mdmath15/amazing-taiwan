@@ -37,4 +37,8 @@ export const Wrapper = styled.div`
   @media (max-width: 1220px) {
     gap: 1rem;
   }
+
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
 `;

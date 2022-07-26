@@ -8,6 +8,8 @@ import { MouseEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { CaretLeft, CaretRight, Circle } from "phosphor-react";
 
+import { useWindowSize } from "@/hooks/useWindowSize";
+
 import * as S from "./Carousel.styles";
 
 interface StateCaroselParams {
@@ -24,6 +26,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [stateCarousel, setStateCarousel] = useState<StateCaroselParams>();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { width } = useWindowSize();
 
   const handleCarousel = useCallback(() => {
     if (carouselRef.current) {
@@ -34,8 +37,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
       setStateCarousel({
         ...stateCarousel,
         qntBalls: new Array(balls).fill(0),
-        width:
-          carousel.children[0].clientWidth * (carousel.children.length - 1),
+        width: carousel.children[0].clientWidth * cardsToShow + 60,
       });
     }
   }, [setStateCarousel, cardsToShow]);
@@ -69,7 +71,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
 
   return (
     <S.ContainerRelative>
-      <S.Container ref={carouselRef} width={stateCarousel?.width}>
+      <S.Container ref={carouselRef} width={stateCarousel?.width!}>
         {children}
         <div className="buttons">
           <button
@@ -83,7 +85,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
           <S.BallsContainer>
             {stateCarousel?.qntBalls!.map((item, index) => (
               <S.Balls key={index} active={currentIndex === index}>
-                <Circle size={20} weight="fill" />
+                <Circle size={width! > 400 ? 20 : 15} weight="fill" />
               </S.Balls>
             ))}
           </S.BallsContainer>
@@ -93,7 +95,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
             id="next"
             className="next"
           >
-            <CaretRight size={32} color="white" />
+            <CaretRight size={width! > 400 ? 32 : 24} color="white" />
           </button>
         </div>
       </S.Container>

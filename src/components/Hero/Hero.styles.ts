@@ -29,7 +29,7 @@ export const Content = styled.div`
     gap: 1rem;
 
     h1 {
-      color: ${theme.colors.darkBlue};
+      color: ${theme.colors.orange};
       font-size: 3.125rem;
       margin-top: 2rem;
 
@@ -69,8 +69,8 @@ export const Content = styled.div`
 export const ImageWrapper = styled.div`
   position: absolute;
   right: 0;
-  /* max-width: 780px;
-  max-height: 632px; */
+  max-width: 780px;
+  max-height: 632px;
   height: 100%;
   width: 100%;
   background-image: url("/images/hero-image.svg");
