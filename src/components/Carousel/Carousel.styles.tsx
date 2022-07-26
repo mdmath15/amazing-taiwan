@@ -1,24 +1,29 @@
 import styled from "styled-components";
 
-export const ContainerRelative = styled.div<{ max?: number }>`
+export const ContainerRelative = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  max-width: ${({ max }) => `${max}px`};
-  width: 100%;
-  padding: 0 2rem;
+  max-width: 100%;
+  min-height: 500px;
+  margin: 0 auto;
 `;
 
-export const Container = styled.div<{ height?: number; gap?: number }>`
-  max-width: 100%;
+export const Container = styled.div<{ width: number }>`
+  max-width: ${({ width }) => width}px;
   width: 100%;
-  height: ${({ height }) => `${height}px`};
+  min-height: 600px;
   display: flex;
   overflow-x: scroll;
-  padding: 0 0.5rem;
-  gap: ${({ gap }) => `${gap}px`};
+  padding: 0;
+  gap: 1rem;
   scroll-behavior: smooth;
+
   &::-webkit-scrollbar {
     display: none;
   }
+
   .buttons {
     position: absolute;
     bottom: 0%;

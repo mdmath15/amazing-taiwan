@@ -28,21 +28,23 @@ export function Destinations() {
 
   return (
     <S.Container>
-      <h1>Popular destinations in Taiwan</h1>
-      <Carousel height={620} gap={32} cardsToShow={cardsToShow}>
-        {data.destinations.map((destination) => (
-          <DestinationCard
-            key={destination.id}
-            title={destination.title}
-            image={destination.image}
-            destinations={destination.destinations}
-            rating={destination.rating}
-          />
-        ))}
-      </Carousel>
-      <Button type="button" color="white" background="orange" withGlow>
-        Show More
-      </Button>
+      <S.Content>
+        <h1>Popular destinations in Taiwan</h1>
+        <Carousel cardsToShow={cardsToShow}>
+          {data.destinations.map((destination) => (
+            <DestinationCard
+              key={destination.id}
+              title={destination.title}
+              image={destination.image}
+              destinations={destination.destinations}
+              rating={destination.rating}
+            />
+          ))}
+        </Carousel>
+        <Button type="button" color="white" background="orange" withGlow>
+          Show More
+        </Button>
+      </S.Content>
     </S.Container>
   );
 }

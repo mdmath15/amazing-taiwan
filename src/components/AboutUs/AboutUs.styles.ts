@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const Container = styled.section`
   max-width: 1280px;
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 10rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +12,6 @@ export const Container = styled.section`
   @media (max-width: 1440px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
     padding: 4rem 2rem;
   }
 
