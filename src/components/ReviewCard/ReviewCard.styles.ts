@@ -19,6 +19,11 @@ export const Container = styled.div`
       grid-template-rows: 66px 1fr;
     }
 
+    @media (max-width: 620px) {
+      grid-template-columns: 66px 1fr;
+      grid-template-rows: 1fr;
+    }
+
     div {
       display: flex;
       flex-direction: column;

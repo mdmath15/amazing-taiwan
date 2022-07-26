@@ -16,6 +16,17 @@ export const Wrapper = styled.div`
     grid-template-columns: 2fr repeat(4, 1fr);
     gap: 2rem;
 
+    @media (max-width: 860px) {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    @media (max-width: 670px) {
+      grid-template-columns: 1fr 0.5fr;
+    }
+
+    @media (max-width: 480px) {
+    }
+
     hr {
       border-color: ${theme.colors.white};
       width: 100%;

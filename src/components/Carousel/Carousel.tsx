@@ -24,6 +24,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [stateCarousel, setStateCarousel] = useState<StateCaroselParams>();
   const [currentIndex, setCurrentIndex] = useState(0);
+  console.log(carouselRef.current?.children[0].clientWidth * cardsToShow);
 
   const handleCarousel = useCallback(() => {
     if (carouselRef.current) {
@@ -34,8 +35,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
       setStateCarousel({
         ...stateCarousel,
         qntBalls: new Array(balls).fill(0),
-        width:
-          carousel.children[0].clientWidth * (carousel.children.length - 1),
+        width: carousel.children[0].clientWidth * cardsToShow + 60,
       });
     }
   }, [setStateCarousel, cardsToShow]);
@@ -69,7 +69,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
 
   return (
     <S.ContainerRelative>
-      <S.Container ref={carouselRef} width={stateCarousel?.width}>
+      <S.Container ref={carouselRef} width={stateCarousel?.width!}>
         {children}
         <div className="buttons">
           <button
