@@ -33,4 +33,8 @@ export const Wrapper = styled.div`
   justify-items: center;
   justify-content: center;
   gap: 2rem;
+
+  @media (max-width: 1220px) {
+    gap: 1rem;
+  }
 `;

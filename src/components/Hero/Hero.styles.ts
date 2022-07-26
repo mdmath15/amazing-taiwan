@@ -7,6 +7,10 @@ export const Content = styled.div`
     justify-content: center;
     gap: 1rem;
 
+    @media (max-width: 1440px) {
+      flex: 1;
+    }
+
     h1 {
       color: ${theme.colors.darkBlue};
       font-size: 3.125rem;
@@ -46,27 +50,28 @@ export const Content = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  span {
-    position: absolute;
-    right: 0;
-    max-width: 780px;
-    max-height: 632px;
-    height: 100%;
-    width: 100%;
-    background-image: url("/images/hero-image.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  max-width: 780px;
+  max-height: 632px;
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/hero-image.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 
-    @media (max-width: 1440px) {
-      position: relative;
-      background-size: contain;
-      margin-right: 2rem;
-    }
+  @media (max-width: 1440px) {
+    position: relative;
+    background-size: contain;
+    background-position: right;
+  }
 
-    @media (max-width: 800px) {
-      margin-right: none;
-      background-position: center;
-    }
+  @media (max-width: 800px) {
+    background-position: center;
+  }
+
+  @media (max-width: 610px) {
+    background-position: right;
   }
 `;
 
@@ -82,11 +87,11 @@ export const Container = styled.section`
   @media (max-width: 1440px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
     padding: 4rem 2rem;
   }
 
-  @media (max-width: 800px) {
-    justify-items: normal;
+  @media (max-width: 610px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 180px;
   }
 `;

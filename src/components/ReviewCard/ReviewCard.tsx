@@ -2,6 +2,8 @@ import { Rating } from "react-simple-star-rating";
 
 import Image from "next/image";
 
+import { useWindowSize } from "@/hooks/useWindowSize";
+
 import * as S from "./ReviewCard.styles";
 
 export interface TestimonialCardProps {
@@ -19,6 +21,7 @@ export function ReviewCard({
   author,
   avatar,
 }: TestimonialCardProps) {
+  const { width } = useWindowSize();
   return (
     <S.Container>
       <Image src={avatar} alt="Avatar" width={66} height={66} layout="fixed" />
@@ -27,7 +30,7 @@ export function ReviewCard({
         <Rating
           ratingValue={0}
           initialValue={rating}
-          size={25}
+          size={width! < 1220 ? 20 : 24}
           readonly
           allowHalfIcon
         />

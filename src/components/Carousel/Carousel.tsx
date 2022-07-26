@@ -23,18 +23,27 @@ interface CarouselParams {
   maxWidth?: number;
   height?: number;
   gap?: number;
+  cardsToShow: number;
 }
 
-export function Carousel({ children, maxWidth, height, gap }: CarouselParams) {
+export function Carousel({
+  children,
+  maxWidth,
+  height,
+  gap,
+  cardsToShow,
+}: CarouselParams) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [stateCarousel, setStateCarousel] = useState<StateCaroselParams>();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const scrollSize = 278;
 
   const handleCarousel = useCallback(() => {
     if (carouselRef.current) {
       const carousel = carouselRef.current;
 
-      const balls = Math.round(carousel.children.length / 4);
+      const balls = Math.round((carousel.children.length - 1) / cardsToShow);
 
       setStateCarousel({
         ...stateCarousel,
@@ -46,7 +55,7 @@ export function Carousel({ children, maxWidth, height, gap }: CarouselParams) {
           carousel.children.item(0)?.clientWidth!,
       });
     }
-  }, [setStateCarousel]);
+  }, [setStateCarousel, cardsToShow]);
 
   const handleCarouselAction = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -57,14 +66,14 @@ export function Carousel({ children, maxWidth, height, gap }: CarouselParams) {
           setCurrentIndex(currentIndex + 1);
         }
         return (carouselRef.current!.scrollLeft +=
-          carouselRef.current!.offsetWidth + gap!);
+          stateCarousel?.widthCarousel! + gap!);
 
       case "prev":
         if (currentIndex > 0) {
           setCurrentIndex(currentIndex - 1);
         }
         return (carouselRef.current!.scrollLeft -=
-          carouselRef.current!.offsetWidth + gap!);
+          stateCarousel?.widthCarousel! + gap!);
 
       default:
         return null;
