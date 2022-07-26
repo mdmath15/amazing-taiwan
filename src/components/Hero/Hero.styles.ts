@@ -69,8 +69,8 @@ export const Content = styled.div`
 export const ImageWrapper = styled.div`
   position: absolute;
   right: 0;
-  /* max-width: 780px;
-  max-height: 632px; */
+  max-width: 780px;
+  max-height: 632px;
   height: 100%;
   width: 100%;
   background-image: url("/images/hero-image.svg");
