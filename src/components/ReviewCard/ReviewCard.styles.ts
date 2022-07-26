@@ -14,6 +14,11 @@ export const Container = styled.div`
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
       rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 66px 1fr;
+    }
+
     div {
       display: flex;
       flex-direction: column;
@@ -22,11 +27,19 @@ export const Container = styled.div`
       h2 {
         font-size: 1.5rem;
         color: ${theme.colors.darkBlue};
+
+        @media (max-width: 1220px) {
+          font-size: 1rem;
+        }
       }
 
       p {
         color: ${theme.colors.darkBlue};
         flex: 1;
+
+        @media (max-width: 1220px) {
+          font-size: 0.875rem;
+        }
       }
     }
   `}
@@ -38,5 +51,9 @@ export const AuthorName = styled.span`
     font-size: 1.125rem;
     color: ${theme.colors.darkBlue};
     font-weight: ${theme.fonts.weight.bold};
+
+    @media (max-width: 1220px) {
+      font-size: 1rem;
+    }
   `}
 `;

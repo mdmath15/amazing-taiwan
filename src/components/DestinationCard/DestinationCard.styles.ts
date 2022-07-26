@@ -11,6 +11,7 @@ export const Container = styled.div`
 export const ImageContainer = styled.div`
   height: 458px;
   width: 278px;
+
   span {
     border-radius: 1.5rem;
   }

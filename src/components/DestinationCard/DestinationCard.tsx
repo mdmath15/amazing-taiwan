@@ -20,7 +20,13 @@ export function DestinationCard({
   return (
     <S.Container>
       <S.ImageContainer>
-        <Image src={image} alt={title} width={278} height={424} />
+        <Image
+          src={image}
+          alt={title}
+          width={278}
+          height={424}
+          layout="responsive"
+        />
       </S.ImageContainer>
       <S.Content>
         <h2>{title}</h2>

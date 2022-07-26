@@ -1,41 +1,90 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
-  ${({ theme }) => css`
-    padding: 0 0 4rem 0;
+export const Container = styled.section`
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 
-    h1 {
-      color: ${theme.colors.darkBlue};
-      padding: 4rem 0 0 0rem;
-      font-size: 2.25rem;
-      text-align: center;
+  @media (max-width: 1440px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 4rem 2rem;
+  }
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 180px;
+  }
+`;
+
+export const Title = styled.h1`
+  ${({ theme }) => css`
+    color: ${theme.colors.darkBlue};
+    padding: 4rem 0 0 0rem;
+    font-size: 2.25rem;
+    text-align: center;
+  `}
+`;
+
+export const Content = styled.div`
+  ${({ theme }) => css`
+    padding: 2rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    @media (max-width: 860px) {
+      padding: 0 0 1rem;
     }
 
-    section {
-      height: 600px;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 6rem 2rem 4rem;
-      background: url("/images/about-us-image.svg") no-repeat right;
+    p {
+      font-size: 1.35rem;
+      font-weight: ${theme.fonts.weight.normal};
 
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 1rem;
-
-      p {
-        font-size: 1.5rem;
-        font-weight: ${theme.fonts.weight.normal};
+      @media (max-width: 1440px) {
+        font-size: 1.25rem;
       }
 
-      span {
-        color: ${theme.colors.darkBlue};
-        font-weight: ${theme.fonts.weight.bold};
+      @media (max-width: 1184px) {
+        font-size: 1rem;
       }
+    }
 
-      strong {
-        font-weight: ${theme.fonts.weight.bold};
-      }
+    span {
+      color: ${theme.colors.orange};
+      font-weight: ${theme.fonts.weight.bold};
+    }
+
+    strong {
+      font-weight: ${theme.fonts.weight.bold};
     }
   `}
+`;
+
+export const ImageWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  max-width: 593px;
+  max-height: 575px;
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/about-us-image.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (max-width: 1440px) {
+    position: relative;
+    background-size: contain;
+    background-position: right;
+  }
+
+  @media (max-width: 860px) {
+    background-position: center;
+  }
 `;
