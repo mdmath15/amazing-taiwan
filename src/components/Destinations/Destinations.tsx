@@ -29,7 +29,7 @@ export function Destinations() {
   return (
     <S.Container>
       <h1>Popular destinations in Taiwan</h1>
-      <Carousel height={620} gap={32} cardsToShow={cardsToShow}>
+      <Carousel height={620} maxWidth={1280} gap={32} cardsToShow={cardsToShow}>
         {data.destinations.map((destination) => (
           <DestinationCard
             key={destination.id}

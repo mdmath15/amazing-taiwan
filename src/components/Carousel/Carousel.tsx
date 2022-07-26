@@ -37,8 +37,6 @@ export function Carousel({
   const [stateCarousel, setStateCarousel] = useState<StateCaroselParams>();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const scrollSize = 278;
-
   const handleCarousel = useCallback(() => {
     if (carouselRef.current) {
       const carousel = carouselRef.current;
@@ -66,14 +64,14 @@ export function Carousel({
           setCurrentIndex(currentIndex + 1);
         }
         return (carouselRef.current!.scrollLeft +=
-          stateCarousel?.widthCarousel! + gap!);
+          carouselRef.current!.offsetWidth + gap!);
 
       case "prev":
         if (currentIndex > 0) {
           setCurrentIndex(currentIndex - 1);
         }
         return (carouselRef.current!.scrollLeft -=
-          stateCarousel?.widthCarousel! + gap!);
+          carouselRef.current!.offsetWidth + gap!);
 
       default:
         return null;

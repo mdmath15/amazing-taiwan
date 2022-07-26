@@ -1,15 +1,32 @@
 import styled, { css } from "styled-components";
 
+export const Container = styled.section`
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  @media (max-width: 1440px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 2rem;
+  }
+
+  @media (max-width: 610px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 180px;
+  }
+`;
+
 export const Content = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-
-    @media (max-width: 1440px) {
-      flex: 1;
-    }
 
     h1 {
       color: ${theme.colors.darkBlue};
@@ -52,8 +69,8 @@ export const Content = styled.div`
 export const ImageWrapper = styled.div`
   position: absolute;
   right: 0;
-  max-width: 780px;
-  max-height: 632px;
+  /* max-width: 780px;
+  max-height: 632px; */
   height: 100%;
   width: 100%;
   background-image: url("/images/hero-image.svg");
@@ -72,26 +89,5 @@ export const ImageWrapper = styled.div`
 
   @media (max-width: 610px) {
     background-position: right;
-  }
-`;
-
-export const Container = styled.section`
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 8rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-
-  @media (max-width: 1440px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 4rem 2rem;
-  }
-
-  @media (max-width: 610px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 180px;
   }
 `;
