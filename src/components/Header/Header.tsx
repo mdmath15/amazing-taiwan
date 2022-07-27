@@ -38,7 +38,15 @@ export function Header() {
           style={{ cursor: "pointer" }}
         />
         <S.NavContainer headerSticky={headerSticky} active={menuOpen}>
-          <S.Menu onClick={() => setMenuOpen(!menuOpen)}>Menu</S.Menu>
+          <S.Menu
+            onClick={() => setMenuOpen(!menuOpen)}
+            active={menuOpen}
+            headerSticky={headerSticky}
+          >
+            <span />
+            <span />
+            <span />
+          </S.Menu>
 
           <ul
             role="menu"
