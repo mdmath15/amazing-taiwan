@@ -66,16 +66,13 @@ export const NavContainer = styled.nav<HeaderProps>`
         height: 100vh;
         top: 80px;
         right: 0px;
-        display: ${active && "flex"};
-        visibility: ${active ? "visible" : "hidden"};
-        opacity: ${active ? "1" : "0"};
-        pointer-events: ${active ? "auto" : "none"};
-        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        opacity: ${active ? 1 : 0};
         flex-direction: column;
         align-items: center;
         justify-content: start;
         padding-top: 20vh;
         background-color: ${theme.colors.orange};
+        animation: ${active ? FadeIn : FadeOut} 1s ease-in-out;
       }
 
       li {
@@ -113,10 +110,8 @@ export const NavContainer = styled.nav<HeaderProps>`
 
 export const Menu = styled.button`
   display: none;
-  pointer-events: none;
 
   @media (max-width: 756px) {
     display: block;
-    pointer-events: auto;
   }
 `;
