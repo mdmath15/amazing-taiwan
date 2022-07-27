@@ -72,7 +72,7 @@ export const NavContainer = styled.nav<HeaderProps>`
         justify-content: start;
         padding-top: 20vh;
         background-color: ${theme.colors.orange};
-        animation: ${active ? FadeIn : FadeOut} 1s ease-in-out;
+        animation: ${active ? FadeIn : FadeOut} 0.3s ease-in-out;
       }
 
       li {
