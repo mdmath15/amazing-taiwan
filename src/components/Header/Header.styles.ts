@@ -67,6 +67,7 @@ export const NavContainer = styled.nav<HeaderProps>`
         top: 80px;
         right: 0px;
         opacity: ${active ? 1 : 0};
+        display: ${active ? "flex" : "none"};
         flex-direction: column;
         align-items: center;
         justify-content: start;

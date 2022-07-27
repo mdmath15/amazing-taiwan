@@ -26,6 +26,7 @@ export function DestinationCard({
           width={278}
           height={424}
           layout="responsive"
+          priority
         />
       </S.ImageContainer>
       <S.Content>

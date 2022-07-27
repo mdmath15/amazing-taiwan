@@ -11,7 +11,13 @@ interface WaveProps {
 export function Wave({ wave, height, width }: WaveProps) {
   return (
     <S.Container>
-      <Image src={wave} width={width} height={height} layout="responsive" />
+      <Image
+        src={wave}
+        width={width}
+        height={height}
+        layout="responsive"
+        priority
+      />
     </S.Container>
   );
 }
