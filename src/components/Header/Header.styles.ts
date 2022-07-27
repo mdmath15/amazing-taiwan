@@ -67,6 +67,7 @@ export const NavContainer = styled.nav<HeaderProps>`
         top: 80px;
         right: 0px;
         opacity: ${active ? 1 : 0};
+        display: ${active ? "flex" : "none"};
         flex-direction: column;
         align-items: center;
         justify-content: start;
@@ -108,10 +109,38 @@ export const NavContainer = styled.nav<HeaderProps>`
   `}
 `;
 
-export const Menu = styled.button`
+export const Menu = styled.button<HeaderProps>`
   display: none;
 
   @media (max-width: 756px) {
     display: block;
+    background: none;
+
+    span {
+      display: block;
+      width: 2rem;
+      height: 3px;
+      background-color: ${({ theme, headerSticky }) =>
+        headerSticky ? theme.colors.white : theme.colors.orange};
+      margin: 6px 0;
+      transition: 0.4s ease-in-out;
+    }
   }
+  ${({ active }) =>
+    active &&
+    css`
+      span:first-child {
+        -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+        transform: rotate(-45deg) translate(-5px, 5px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
+    `}
 `;
