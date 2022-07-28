@@ -25,8 +25,11 @@ export function AboutUs() {
             <br /> makes planning easy no matter the trip type.
           </p>
         </S.Content>
-        <S.ImageWrapper>
-          <span />
+        <S.ImageWrapper data-testid="container-img">
+          <span
+            role="img"
+            aria-label="A person looking for destinations on the board"
+          />
         </S.ImageWrapper>
       </S.Container>
     </>
