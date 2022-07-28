@@ -24,8 +24,10 @@ describe("About Us", () => {
       </ThemeProvider>
     );
 
-    expect(screen.getByTestId("container-img")).toBeInTheDocument();
-    expect(screen.getByTestId("container-img")).toHaveStyle({
+    const ImageContainer = screen.getByTestId("container-img");
+
+    expect(ImageContainer).toBeInTheDocument();
+    expect(ImageContainer).toHaveStyle({
       backgroundImage: "url(/images/about-us-image.svg)",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
