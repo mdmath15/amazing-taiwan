@@ -42,6 +42,7 @@ export function Header() {
             onClick={() => setMenuOpen(!menuOpen)}
             active={menuOpen}
             headerSticky={headerSticky}
+            data-testid="open-menu"
           >
             <span />
             <span />
