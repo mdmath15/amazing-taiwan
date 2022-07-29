@@ -33,6 +33,11 @@ export const Container = styled.div<{ width: number }>`
     justify-content: center;
     max-width: 100%;
     width: 100%;
+
+    @media (max-width: 768px) {
+      justify-content: space-around;
+    }
+
     button {
       background: none;
       border: none;

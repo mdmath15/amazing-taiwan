@@ -17,12 +17,12 @@ interface StateCaroselParams {
   width?: number | undefined;
 }
 
-interface CarouselParams {
+interface CarouselProps {
   children: React.ReactNode;
   cardsToShow: number;
 }
 
-export function Carousel({ children, cardsToShow }: CarouselParams) {
+export function Carousel({ children, cardsToShow }: CarouselProps) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [stateCarousel, setStateCarousel] = useState<StateCaroselParams>();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -86,13 +86,15 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
           >
             <CaretLeft size={32} color="white" />
           </button>
-          <S.BallsContainer data-testid="balls-container">
-            {stateCarousel?.qntBalls!.map((item, index) => (
-              <S.Balls key={index} active={currentIndex === index}>
-                <Circle size={width! > 400 ? 20 : 15} weight="fill" />
-              </S.Balls>
-            ))}
-          </S.BallsContainer>
+          {width! > 768 && (
+            <S.BallsContainer data-testid="balls-container">
+              {stateCarousel?.qntBalls!.map((item, index) => (
+                <S.Balls key={index} active={currentIndex === index}>
+                  <Circle size={20} weight="fill" />
+                </S.Balls>
+              ))}
+            </S.BallsContainer>
+          )}
           <button
             data-testid="next"
             type="button"
@@ -100,7 +102,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
             id="next"
             className="next"
           >
-            <CaretRight size={width! > 400 ? 32 : 24} color="white" />
+            <CaretRight size={32} color="white" />
           </button>
         </div>
       </S.Container>
