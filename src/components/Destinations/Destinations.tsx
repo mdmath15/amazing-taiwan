@@ -49,7 +49,7 @@ export function Destinations() {
           </Button>
         </S.Content>
       </S.Container>
-      <Wave wave="/images/wave-bottom.svg" width="1440" height={207} />
+      <Wave wave="/images/wave-bottom1.svg" width="1600" height={207} />
     </>
   );
 }

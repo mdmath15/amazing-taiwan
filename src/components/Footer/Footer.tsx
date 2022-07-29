@@ -9,7 +9,7 @@ import * as S from "./Footer.styles";
 export function Footer() {
   return (
     <>
-      <Wave wave="/images/wave-footer.svg" width="1440" height={264} />
+      <Wave wave="/images/wave-footer1.svg" width="1600" height={264} />
       <S.Container>
         <S.Wrapper>
           <S.SocialContainer>
