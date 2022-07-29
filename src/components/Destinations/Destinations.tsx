@@ -6,6 +6,7 @@ import { useWindowSize } from "@/hooks/useWindowSize";
 import { Button } from "../Button";
 import { Carousel } from "../Carousel";
 import { DestinationCard } from "../DestinationCard";
+import { Wave } from "../Wave";
 import * as S from "./Destinations.styles";
 
 export function Destinations() {
@@ -27,24 +28,28 @@ export function Destinations() {
   }, [width]);
 
   return (
-    <S.Container>
-      <S.Content>
-        <h1>Popular destinations in Taiwan</h1>
-        <Carousel cardsToShow={cardsToShow}>
-          {data.destinations.map((destination) => (
-            <DestinationCard
-              key={destination.id}
-              title={destination.title}
-              image={destination.image}
-              destinations={destination.destinations}
-              rating={destination.rating}
-            />
-          ))}
-        </Carousel>
-        <Button type="button" color="white" background="orange" withGlow>
-          Show More
-        </Button>
-      </S.Content>
-    </S.Container>
+    <>
+      <Wave wave="/images/wave-top.svg" width="1440" height="131" />
+      <S.Container>
+        <S.Content>
+          <h1>Popular destinations in Taiwan</h1>
+          <Carousel cardsToShow={cardsToShow}>
+            {data.destinations.map((destination) => (
+              <DestinationCard
+                key={destination.id}
+                title={destination.title}
+                image={destination.image}
+                destinations={destination.destinations}
+                rating={destination.rating}
+              />
+            ))}
+          </Carousel>
+          <Button type="button" color="white" background="orange" withGlow>
+            Show More
+          </Button>
+        </S.Content>
+      </S.Container>
+      <Wave wave="/images/wave-bottom.svg" width="1440" height={207} />
+    </>
   );
 }

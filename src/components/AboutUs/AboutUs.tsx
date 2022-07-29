@@ -1,10 +1,8 @@
-import { Wave } from "../Wave";
 import * as S from "./AboutUs.styles";
 
 export function AboutUs() {
   return (
     <>
-      <Wave wave="/images/wave-bottom.svg" width="1440" height={207} />
       <S.Title>About Us</S.Title>
       <S.Container>
         <S.Content>
