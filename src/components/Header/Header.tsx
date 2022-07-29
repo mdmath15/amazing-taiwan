@@ -54,17 +54,17 @@ export function Header() {
             onClick={() => (menuOpen ? setMenuOpen(false) : setMenuOpen(false))}
           >
             <li>
-              <Link href="/">
+              <Link href="/#home" scroll={false}>
                 <a>Home</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/#destinations" scroll={false}>
                 <a>Explore</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="#about">
                 <a>About</a>
               </Link>
             </li>

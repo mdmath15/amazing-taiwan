@@ -1,13 +1,10 @@
-import { useWindowSize } from "@/hooks/useWindowSize";
-
 import { data } from "../../data/data";
 import { ReviewCard } from "../ReviewCard";
 import * as S from "./Reviews.styles";
 
 export function Reviews() {
-  const { width } = useWindowSize();
   return (
-    <S.Container>
+    <S.Container id="reviews">
       <section>
         <h1>Let’s see what other travellers say</h1>
         <S.Wrapper>

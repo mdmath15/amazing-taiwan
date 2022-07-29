@@ -30,7 +30,7 @@ export function Destinations() {
   return (
     <>
       <Wave wave="/images/wave-top.svg" width="1440" height="131" />
-      <S.Container>
+      <S.Container id="destinations">
         <S.Content>
           <h1>Popular destinations in Taiwan</h1>
           <Carousel cardsToShow={cardsToShow}>

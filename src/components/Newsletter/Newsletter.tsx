@@ -6,7 +6,7 @@ import * as S from "./Newsletter.styles";
 export function Newsletter() {
   const { width } = useWindowSize();
   return (
-    <S.Container>
+    <S.Container id="newsletter">
       <section data-testid="container-img">
         <h1>Subscribe our newsletter</h1>
         <p>

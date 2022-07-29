@@ -3,7 +3,7 @@ import * as S from "./AboutUs.styles";
 export function AboutUs() {
   return (
     <>
-      <S.Title>About Us</S.Title>
+      <S.Title id="about">About Us</S.Title>
       <S.Container>
         <S.Content>
           <p className="first">

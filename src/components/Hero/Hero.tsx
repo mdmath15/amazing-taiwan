@@ -7,7 +7,7 @@ export function Hero() {
   const { width } = useWindowSize();
 
   return (
-    <S.Container>
+    <S.Container id="home">
       <S.Content>
         <h1>
           Discover your next {width! > 600 && <br />} place to travel
