@@ -10,7 +10,12 @@ interface WaveProps {
 
 export function Wave({ wave, height, width }: WaveProps) {
   return (
-    <S.Container>
+    <S.Container
+      style={{
+        position: "relative",
+        objectFit: "cover",
+      }}
+    >
       <Image src={wave} width={width} height={height} layout="responsive" />
     </S.Container>
   );
