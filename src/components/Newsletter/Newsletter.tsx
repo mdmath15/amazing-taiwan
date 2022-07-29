@@ -7,7 +7,7 @@ export function Newsletter() {
   const { width } = useWindowSize();
   return (
     <S.Container>
-      <section>
+      <section data-testid="container-img">
         <h1>Subscribe our newsletter</h1>
         <p>
           Receive latest news, update, and many other things every
