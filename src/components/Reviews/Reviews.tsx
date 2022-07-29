@@ -7,7 +7,7 @@ export function Reviews() {
     <S.Container id="reviews">
       <section>
         <h1>Let’s see what other travellers say</h1>
-        <S.Wrapper>
+        <S.Wrapper data-testid="container-reviews">
           {data.reviews.map((review) => (
             <ReviewCard
               key={review.id}
