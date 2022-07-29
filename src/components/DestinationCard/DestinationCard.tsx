@@ -33,6 +33,7 @@ export function DestinationCard({
         <h2>{title}</h2>
         <p>{destinations}</p>
         <Rating
+          data-testid="rating"
           ratingValue={0}
           initialValue={rating}
           size={25}
