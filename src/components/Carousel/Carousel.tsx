@@ -70,8 +70,12 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
   }, [handleCarousel]);
 
   return (
-    <S.ContainerRelative>
-      <S.Container ref={carouselRef} width={stateCarousel?.width!}>
+    <S.ContainerRelative data-testid="carousel-container">
+      <S.Container
+        ref={carouselRef}
+        width={stateCarousel?.width!}
+        data-testid="childrens-container"
+      >
         {children}
         <div className="buttons">
           <button
@@ -82,7 +86,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
           >
             <CaretLeft size={32} color="white" />
           </button>
-          <S.BallsContainer>
+          <S.BallsContainer data-testid="balls-container">
             {stateCarousel?.qntBalls!.map((item, index) => (
               <S.Balls key={index} active={currentIndex === index}>
                 <Circle size={width! > 400 ? 20 : 15} weight="fill" />
@@ -90,6 +94,7 @@ export function Carousel({ children, cardsToShow }: CarouselParams) {
             ))}
           </S.BallsContainer>
           <button
+            data-testid="next"
             type="button"
             onClick={handleCarouselAction}
             id="next"
