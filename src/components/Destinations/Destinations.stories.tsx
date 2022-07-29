@@ -8,7 +8,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Destinations } from "./Destinations";
 
 export default {
-  title: "Components/Destinations",
+  title: "Sections/Destinations",
   component: Destinations,
   parameters: {
     layout: "fullscreen",
